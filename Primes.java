@@ -1,8 +1,8 @@
 public class Primes {
     public static void main(String[] args) {
         // Replace this statement with your code
-        //int n = Integer.parseInt(args[0]);
-        int n = 30;
+        int n = Integer.parseInt(args[0]);
+        //int n = 30;
         System.out.println("Prime numbers up to " + n + ":");
         boolean[] primes = new boolean[n+1];
         primes[0] = false;
@@ -12,7 +12,7 @@ public class Primes {
         }
         int i = 0;
         while (i < n){
-            while (!primes[i]){
+            while (i <= n && !primes[i]){
                 i++;
             }
             int j = i + 1;
@@ -32,6 +32,6 @@ public class Primes {
             }
         }
         System.out.println("There are " + count + " primes between 2 and " + n 
-                           + " (" + (int)((count / n) * 100) + "% are primes)");
+                           + " (" + (int)(((double)count / n) * 100) + "% are primes)");
     }
 }
