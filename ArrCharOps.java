@@ -96,13 +96,11 @@ public class ArrCharOps {
     public static char[] concat(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
         char[] arr3 = new char[arr1.length + arr2.length];
-        for (int i = 0; i < arr3.length; i++){
-            if (i < arr1.length){
-                arr3[i] = arr1[i];
-            }
-            else{
-                arr3[i] = arr2[i - arr1.length];
-            }
+        for (int i = 0; i < arr1.length; i++) {
+            arr3[i] = arr1[i];
+        }
+        for (int i = 0; i < arr2.length; i++) {
+            arr3[arr1.length + i] = arr2[i];
         }
         return arr3;
     }
@@ -120,6 +118,9 @@ public class ArrCharOps {
             arr2[i - beginIndex] = arr[i];
         }
         return arr2;
+
+
+        
     }
 
      /** Returns a single integer that represents the given array. This integer is sometimes 
@@ -167,6 +168,9 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
+        if (str1 == null || str2 == null) {
+            return -2;  
+        }
         int i = 0;
         while (i < str1.length() && i < str2.length()){
             if ((int)str1.charAt(i) < (int)str2.charAt(i)){
