@@ -17,14 +17,48 @@ public class MyString {
     }
 
     /** Returns the lowercase version of the given string. */
+    /*
+     * 65 - 90 A-Z
+     * 97 - 122 a-z
+     */
     public static String lowerCase(String str) {
         // Replace the following statement with your code
-        return null;
+        String str2 = "";
+        int ch;
+        for (int i = 0; i < str.length(); i++){
+            ch = (int)str.charAt(i);
+            if (ch >= 65 && ch <= 90){
+                ch += 32;
+                str2 += (char)ch;
+            }
+            else {
+                str2 += str.charAt(i);
+            }
+        }
+        return str2;
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
         // Replace the following statement with your code
+        if (str2.length() == 0) {
+            return true;
+        }
+        if (str1.length() < str2.length()) {
+            return false;
+        }
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+            boolean found = true;
+            for (int j = 0; j < str2.length(); j++) {
+                if (str1.charAt(i + j) != str2.charAt(j)) {
+                    found = false;
+                    break;
+                }
+            }
+            if (found) {
+                return true;
+            }
+        }
         return false;
     }
 }

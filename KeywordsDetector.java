@@ -1,3 +1,4 @@
+//import Mystring.Contains;
 public class KeywordsDetector {
     public static void main(String[] args) {
         String[] sentences = {
@@ -22,5 +23,14 @@ public class KeywordsDetector {
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         // Replace this comment with your code
+        for (String sent1 : sentences) {
+            String lSentence = sent1.toLowerCase();
+            for (String keyword : keywords) {
+                if (MyString.contains(lSentence, keyword.toLowerCase())) {
+                    System.out.println(sent1);
+                    break;
+                }
+            }
+        }
     }
 }
