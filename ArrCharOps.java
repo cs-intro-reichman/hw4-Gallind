@@ -7,6 +7,7 @@ public class ArrCharOps {
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
         System.out.println(str);  // Prints the string
         println(arr1);            // Prints an array of characters
+        /*
         System.out.println(charAt(arr1,2));      
         System.out.println(indexOf(arr1,'l'));  
         System.out.println(indexOf(arr1,'l',3)); 
@@ -22,6 +23,8 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
+        */
+        System.out.println(concat(arr1, arr2));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -46,8 +49,16 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
+        if (arr1.length != arr2.length){ 
+            return false;
+        }
+        for (int i = 0; i < arr1.length; i++){
+            if (arr1[i] != arr2[i]){
+                return false;
+            }
+        }
         
-        return arr1 == arr2;
+        return true;
     }
 
     /** Returns the index within the given array of the first occurrence of the given character.
@@ -168,7 +179,7 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
-        if (str1 == null || str2 == null) {
+        if (str1 == null || str2 == null || str1.length() == 0 || str2.length() == 0) {
             return -2;  
         }
         int i = 0;
